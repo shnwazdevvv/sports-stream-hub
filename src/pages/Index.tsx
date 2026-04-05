@@ -3,6 +3,7 @@ import { Tv, Radio, Zap } from "lucide-react";
 import { channels, categories } from "@/data/channels";
 import ChannelCard from "@/components/ChannelCard";
 import VideoPlayer from "@/components/VideoPlayer";
+import TeamSection from "@/components/TeamSection";
 
 const Index = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -99,6 +100,9 @@ const Index = () => {
             <p className="font-heading font-semibold">No channels found</p>
           </div>
         )}
+
+        {/* Team */}
+        <TeamSection />
       </main>
 
       {/* Footer */}
