@@ -100,6 +100,9 @@ const Index = () => {
             <p className="font-heading font-semibold">No channels found</p>
           </div>
         )}
+
+        {/* Team */}
+        <TeamSection />
       </main>
 
       {/* Footer */}
