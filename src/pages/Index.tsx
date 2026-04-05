@@ -23,7 +23,12 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background font-body">
+    <div
+      className="min-h-screen bg-background font-body"
+      onContextMenu={(e) => e.preventDefault()}
+      onCopy={(e) => e.preventDefault()}
+      onCut={(e) => e.preventDefault()}
+    >
       {/* Header */}
       <header className="sticky top-0 z-50 glass-strong">
         <div className="mx-auto flex items-center justify-between px-4 py-3 max-w-5xl">
