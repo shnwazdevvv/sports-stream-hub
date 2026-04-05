@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { Tv, Radio } from "lucide-react";
+import { Tv, Radio, Zap } from "lucide-react";
 import { channels, categories } from "@/data/channels";
 import ChannelCard from "@/components/ChannelCard";
 import VideoPlayer from "@/components/VideoPlayer";
@@ -24,22 +24,29 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background font-body">
       {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
-        <div className="container mx-auto flex items-center justify-between px-4 py-3">
-          <div className="flex items-center gap-2">
-            <Tv className="h-6 w-6 text-primary" />
-            <span className="font-heading text-xl font-bold text-foreground tracking-wide">
-              STR <span className="text-primary">SPORTS</span>
-            </span>
+      <header className="sticky top-0 z-50 glass-strong">
+        <div className="mx-auto flex items-center justify-between px-4 py-3 max-w-5xl">
+          <div className="flex items-center gap-2.5">
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary">
+              <Tv className="h-4.5 w-4.5 text-primary-foreground" />
+            </div>
+            <div>
+              <h1 className="font-heading text-lg font-bold text-foreground leading-tight tracking-tight">
+                STR Sports
+              </h1>
+              <p className="text-[10px] text-muted-foreground font-medium tracking-widest uppercase">
+                Live Stream
+              </p>
+            </div>
           </div>
-          <div className="flex items-center gap-2 text-xs text-muted-foreground">
-            <Radio className="h-3.5 w-3.5 text-primary animate-pulse-live" />
-            <span className="font-medium">{channels.length} Channels</span>
+          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full glass-tab text-xs text-muted-foreground">
+            <Radio className="h-3 w-3 text-primary animate-pulse-live" />
+            <span className="font-semibold">{channels.length} Live</span>
           </div>
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-6 space-y-6">
+      <main className="mx-auto max-w-5xl px-4 py-5 space-y-5">
         {/* Player */}
         {activeStream && (
           <VideoPlayer
@@ -50,15 +57,15 @@ const Index = () => {
         )}
 
         {/* Category Tabs */}
-        <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+        <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`shrink-0 rounded-full px-4 py-2 text-sm font-heading font-semibold transition-all duration-200 ${
+              className={`shrink-0 rounded-full px-5 py-2 text-sm font-heading font-semibold transition-all duration-300 ${
                 activeCategory === cat
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                  ? "glass-tab-active"
+                  : "glass-tab text-muted-foreground hover:text-foreground"
               }`}
             >
               {cat}
@@ -69,7 +76,11 @@ const Index = () => {
         {/* Channel Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {filtered.map((channel, i) => (
-            <div key={channel.id} className="animate-fade-up" style={{ animationDelay: `${i * 50}ms`, opacity: 0 }}>
+            <div
+              key={channel.id}
+              className="animate-fade-up"
+              style={{ animationDelay: `${i * 40}ms`, opacity: 0 }}
+            >
               <ChannelCard
                 name={channel.name}
                 streamId={channel.id}
@@ -80,12 +91,20 @@ const Index = () => {
             </div>
           ))}
         </div>
+
+        {/* Empty state */}
+        {filtered.length === 0 && (
+          <div className="flex flex-col items-center py-16 text-muted-foreground">
+            <Zap className="h-8 w-8 mb-2" />
+            <p className="font-heading font-semibold">No channels found</p>
+          </div>
+        )}
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-border py-6 mt-12">
+      <footer className="mt-12 py-6">
         <p className="text-center text-xs text-muted-foreground">
-          STR Sports Live Stream &bull; All channels are free to watch
+          STR Sports &mdash; Free live sports streaming
         </p>
       </footer>
     </div>
