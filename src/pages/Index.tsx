@@ -63,7 +63,7 @@ const Index = () => {
         )}
 
         {/* Category Tabs */}
-        <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
+        <div className="flex gap-1.5 sm:gap-2 overflow-x-auto pb-1 scrollbar-hide -mx-3 px-3 sm:mx-0 sm:px-0">
           {categories.map((cat) => (
             <button
               key={cat}
