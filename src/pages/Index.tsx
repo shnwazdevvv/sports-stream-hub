@@ -68,7 +68,7 @@ const Index = () => {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`shrink-0 rounded-full px-5 py-2 text-sm font-heading font-semibold transition-all duration-300 ${
+              className={`shrink-0 rounded-full px-3.5 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm font-heading font-semibold transition-all duration-300 ${
                 activeCategory === cat
                   ? "glass-tab-active"
                   : "glass-tab text-muted-foreground hover:text-foreground hover:bg-white/50"
