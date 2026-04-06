@@ -52,7 +52,7 @@ const Index = () => {
         </div>
       </header>
 
-      <main className="mx-auto max-w-5xl px-4 py-5 space-y-5">
+      <main className="mx-auto max-w-5xl px-3 sm:px-4 py-4 sm:py-5 space-y-4 sm:space-y-5">
         {/* Player */}
         {activeStream && (
           <VideoPlayer
