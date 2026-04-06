@@ -21,15 +21,15 @@ const VideoPlayer = ({ streamId, channelName, onClose }: VideoPlayerProps) => {
   }, []);
 
   return (
-    <div className="animate-fade-up rounded-2xl glass-card overflow-hidden">
-      <div className="flex items-center justify-between px-4 py-3">
+    <div className="animate-fade-up rounded-xl sm:rounded-2xl glass-card overflow-hidden -mx-3 sm:mx-0">
+      <div className="flex items-center justify-between px-3 sm:px-4 py-2 sm:py-3">
         <div className="flex items-center gap-2">
           <span className="h-2 w-2 rounded-full bg-destructive animate-pulse-live" />
           <span className="text-[11px] font-bold uppercase tracking-wider text-destructive">
             Live Now
           </span>
           <span className="mx-1 text-border">|</span>
-          <h2 className="font-heading font-bold text-foreground text-base truncate">
+          <h2 className="font-heading font-bold text-foreground text-sm sm:text-base truncate max-w-[140px] sm:max-w-none">
             {channelName}
           </h2>
         </div>

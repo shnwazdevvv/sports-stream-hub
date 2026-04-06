@@ -31,13 +31,13 @@ const Index = () => {
     >
       {/* Header */}
       <header className="sticky top-0 z-50 glass-strong">
-        <div className="mx-auto flex items-center justify-between px-4 py-3 max-w-5xl">
+        <div className="mx-auto flex items-center justify-between px-3 sm:px-4 py-2.5 sm:py-3 max-w-5xl">
           <div className="flex items-center gap-2.5">
             <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary">
               <Tv className="h-4.5 w-4.5 text-primary-foreground" />
             </div>
             <div>
-              <h1 className="font-heading text-lg font-bold text-foreground leading-tight tracking-tight">
+              <h1 className="font-heading text-base sm:text-lg font-bold text-foreground leading-tight tracking-tight">
                 STR Sports
               </h1>
               <p className="text-[10px] text-muted-foreground font-medium tracking-widest uppercase">
@@ -52,7 +52,7 @@ const Index = () => {
         </div>
       </header>
 
-      <main className="mx-auto max-w-5xl px-4 py-5 space-y-5">
+      <main className="mx-auto max-w-5xl px-3 sm:px-4 py-4 sm:py-5 space-y-4 sm:space-y-5">
         {/* Player */}
         {activeStream && (
           <VideoPlayer
@@ -63,12 +63,12 @@ const Index = () => {
         )}
 
         {/* Category Tabs */}
-        <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
+        <div className="flex gap-1.5 sm:gap-2 overflow-x-auto pb-1 scrollbar-hide -mx-3 px-3 sm:mx-0 sm:px-0">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`shrink-0 rounded-full px-5 py-2 text-sm font-heading font-semibold transition-all duration-300 ${
+              className={`shrink-0 rounded-full px-3.5 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm font-heading font-semibold transition-all duration-300 ${
                 activeCategory === cat
                   ? "glass-tab-active"
                   : "glass-tab text-muted-foreground hover:text-foreground hover:bg-white/50"
@@ -80,7 +80,7 @@ const Index = () => {
         </div>
 
         {/* Channel Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-3">
           {filtered.map((channel, i) => (
             <div
               key={channel.id}
