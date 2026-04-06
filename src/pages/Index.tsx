@@ -37,7 +37,7 @@ const Index = () => {
               <Tv className="h-4.5 w-4.5 text-primary-foreground" />
             </div>
             <div>
-              <h1 className="font-heading text-lg font-bold text-foreground leading-tight tracking-tight">
+              <h1 className="font-heading text-base sm:text-lg font-bold text-foreground leading-tight tracking-tight">
                 STR Sports
               </h1>
               <p className="text-[10px] text-muted-foreground font-medium tracking-widest uppercase">
