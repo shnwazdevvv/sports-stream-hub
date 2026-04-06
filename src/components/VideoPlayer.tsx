@@ -22,7 +22,7 @@ const VideoPlayer = ({ streamId, channelName, onClose }: VideoPlayerProps) => {
 
   return (
     <div className="animate-fade-up rounded-xl sm:rounded-2xl glass-card overflow-hidden -mx-3 sm:mx-0">
-      <div className="flex items-center justify-between px-4 py-3">
+      <div className="flex items-center justify-between px-3 sm:px-4 py-2 sm:py-3">
         <div className="flex items-center gap-2">
           <span className="h-2 w-2 rounded-full bg-destructive animate-pulse-live" />
           <span className="text-[11px] font-bold uppercase tracking-wider text-destructive">
